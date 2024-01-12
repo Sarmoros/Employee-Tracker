@@ -96,4 +96,18 @@ function viewEmployees() {
     });
 };
 
+function viewDepartments() {
+    db.query('SELECT id AS department_id, name AS department_name FROM department;', function (err, results) {
+        console.table(results);
+        startApp();
+    });
+};
 
+function viewRoles() {
+    db.query('SELECT id AS role_id, title AS job_title, salary, department_id FROM role;', function (err, results) {
+        console.table(results);
+        startApp();
+    });
+};
+
+startApp();
